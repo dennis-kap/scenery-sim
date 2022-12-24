@@ -48,14 +48,14 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(90vh);
+    transform: translateY(100vh);
   }
 }
 
 #precip {
   opacity: 0;
+  display: var(--rain-opacity);
   
-  left: 0;
   rotate: var(--rotate-rain-amount);
 }
 
@@ -87,7 +87,6 @@
 
 .precipitation {
   position: absolute;
-  display: var(--rain-opacity);
   z-index: 100;
   width: 120%;
 }

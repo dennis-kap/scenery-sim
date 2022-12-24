@@ -33,14 +33,14 @@ var particles = [];
       height={randomSize} src={type[randomIndex]} alt=""/>);
     }
 
-    if(toggle){
-      document.documentElement.style.setProperty('--rain-opacity', "block");
+    console.log(document.documentElement.style.getPropertyValue('--rain-opacity'));
+
+    if((document.documentElement.style.getPropertyValue('--rain-opacity') === "none") && toggle){
+      document.documentElement.style.setProperty('--rain-opacity', "inline");
     }
     else{
       document.documentElement.style.setProperty('--rain-opacity', "none");
     }
-
-    console.log(type);
 
     return particles;
   }
