@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Rain, changeType } from './makeRain';
+import { Rain, ChangeType, ToggleRain } from './makeRain';
 
 import summer from './Images/summer.png';
 import spring from './Images/spring.png';
@@ -12,8 +12,12 @@ import treeSp from './Images/treeSp.png';
 import treeFa from './Images/treeFa.png';
 import treeWi from './Images/treeWi.png';
 
+import day from './Images/day.png';
+import night from './Images/night.png';
+
 var hills = summer;
 var tree = treeSu;
+var time = day;
 
 class App extends React.Component {
 
@@ -60,8 +64,20 @@ class App extends React.Component {
     else{
       document.documentElement.style.setProperty('--fall-speed', "0.5s");
     }
-    changeType(season);
+    ChangeType(season);
 
+    this.forceUpdate();
+  }
+
+  changeTime(t) {
+    if(t === "day"){
+      time = day;
+      document.documentElement.style.setProperty('--brightness', "100%");
+    }
+    else if(t === "night"){
+      time = night;
+      document.documentElement.style.setProperty('--brightness', "30%");
+    }
     this.forceUpdate();
   }
 
@@ -70,7 +86,7 @@ class App extends React.Component {
       <div id="screen">
         <div id="scene">
           <div>
-            <img id="sky" src={require("./Images/day.png")} alt=""></img>
+            <img id="sky" src={time} alt=""></img>
             <img id="hill" src={hills} alt="summer"></img>
           </div>
 
@@ -91,7 +107,7 @@ class App extends React.Component {
             <li>
               <h3>Precipitation</h3>
               <input type="checkbox" id="togglePrecip"
-                onInput={()=>Rain(document.getElementById('togglePrecip').checked)}></input>
+                onInput={()=>ToggleRain(document.getElementById('togglePrecip').checked)}></input>
             </li>
             <li>
               <h3>Season</h3>
@@ -99,7 +115,7 @@ class App extends React.Component {
                 <input type="radio" id="spring" name="season"
                   onInput={()=>this.changeSeason("spring")}></input>
                   <label for="winter">Spring<br/></label>
-                <input type="radio" id="summer" name="season"
+                <input type="radio" id="summer" name="season" defaultChecked
                   onInput={()=>this.changeSeason("summer")}></input>
                   <label for="winter">Summer<br/></label>
                 <input type="radio" id="fall" name="season"
@@ -108,6 +124,17 @@ class App extends React.Component {
                 <input type="radio" id="winter" name="season"
                   onInput={()=>this.changeSeason("winter")}></input>
                   <label for="winter">Winter<br/></label>
+              </form>
+            </li>
+            <li>
+              <h3>Time of Day</h3>
+              <form>
+                <input type="radio" id="day" name="time" defaultChecked
+                  onInput={()=>this.changeTime("day")}></input>
+                  <label for="winter">Day<br/></label>
+                <input type="radio" id="night" name="time"
+                  onInput={()=>this.changeTime("night")}></input>
+                  <label for="winter">Night<br/></label>
               </form>
             </li>
           </ul>

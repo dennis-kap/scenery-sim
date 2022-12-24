@@ -15,7 +15,7 @@ var type = rain;
 
 var particles = [];
 
-  function Rain(toggle) {
+  function Rain() {
     particles = [];
     var i = 0;
     while(i < 300) {
@@ -35,17 +35,10 @@ var particles = [];
 
     console.log(document.documentElement.style.getPropertyValue('--rain-opacity'));
 
-    if((document.documentElement.style.getPropertyValue('--rain-opacity') === "none") && toggle){
-      document.documentElement.style.setProperty('--rain-opacity', "inline");
-    }
-    else{
-      document.documentElement.style.setProperty('--rain-opacity', "none");
-    }
-
     return particles;
   }
 
-  function changeType(season){
+  function ChangeType(season){
     if(season === "winter"){
       type = snow;
     }
@@ -54,4 +47,13 @@ var particles = [];
     }
   }
 
-export {Rain, changeType};
+  function ToggleRain(toggle){
+    if(document.documentElement.style.getPropertyValue('--rain-opacity') === "inline") {
+      document.documentElement.style.setProperty('--rain-opacity', "none");
+    }
+    else{
+      document.documentElement.style.setProperty('--rain-opacity', "inline");
+    }
+  }
+
+export {Rain, ChangeType, ToggleRain};

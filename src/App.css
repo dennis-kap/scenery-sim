@@ -9,6 +9,8 @@
 
   --fall-speed: 0.5s;
 
+  --brightness: 100%;
+
 }
 
 /* Calling animations for all the plants with different times for swaying */
@@ -63,6 +65,8 @@
   background-image: linear-gradient(white, cyan);
   display: grid;
   grid-template-columns: 80% 20%;
+
+  filter: brightness(var(--brightness));
 }
 
 #scene {
