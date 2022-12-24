@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/scenery-sim/static/css/main.2c434425.css",
+    "main.js": "/scenery-sim/static/js/main.a4c11447.js",
+    "static/js/787.28cb0dcd.chunk.js": "/scenery-sim/static/js/787.28cb0dcd.chunk.js",
+    "static/media/spring.png": "/scenery-sim/static/media/spring.d885a91b249053852b12.png",
+    "static/media/fall.png": "/scenery-sim/static/media/fall.92fa978a0a6ec6dc0881.png",
+    "static/media/summer.png": "/scenery-sim/static/media/summer.cf0e50587d0ff84a6ae2.png",
+    "static/media/treeFa.png": "/scenery-sim/static/media/treeFa.ac2496dfe4b2cd5900a2.png",
+    "static/media/winter.png": "/scenery-sim/static/media/winter.8c5a65fd09e537d82aee.png",
+    "static/media/treeSp.png": "/scenery-sim/static/media/treeSp.3e07638e6c6684f03b51.png",
+    "static/media/treeSu.png": "/scenery-sim/static/media/treeSu.93513cdb000981b49710.png",
+    "static/media/treeWi.png": "/scenery-sim/static/media/treeWi.c211e3d7f3bbc07e4710.png",
+    "index.html": "/scenery-sim/index.html",
+    "main.2c434425.css.map": "/scenery-sim/static/css/main.2c434425.css.map",
+    "main.a4c11447.js.map": "/scenery-sim/static/js/main.a4c11447.js.map",
+    "787.28cb0dcd.chunk.js.map": "/scenery-sim/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c434425.css",
+    "static/js/main.a4c11447.js"
+  ]
+}
