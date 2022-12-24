@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/scenery-sim/static/css/main.2c434425.css",
+    "main.css": "/scenery-sim/static/css/main.1a6eac19.css",
     "main.js": "/scenery-sim/static/js/main.a4c11447.js",
     "static/js/787.28cb0dcd.chunk.js": "/scenery-sim/static/js/787.28cb0dcd.chunk.js",
     "static/media/spring.png": "/scenery-sim/static/media/spring.d885a91b249053852b12.png",
@@ -12,12 +12,12 @@
     "static/media/treeSu.png": "/scenery-sim/static/media/treeSu.93513cdb000981b49710.png",
     "static/media/treeWi.png": "/scenery-sim/static/media/treeWi.c211e3d7f3bbc07e4710.png",
     "index.html": "/scenery-sim/index.html",
-    "main.2c434425.css.map": "/scenery-sim/static/css/main.2c434425.css.map",
+    "main.1a6eac19.css.map": "/scenery-sim/static/css/main.1a6eac19.css.map",
     "main.a4c11447.js.map": "/scenery-sim/static/js/main.a4c11447.js.map",
     "787.28cb0dcd.chunk.js.map": "/scenery-sim/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c434425.css",
+    "static/css/main.1a6eac19.css",
     "static/js/main.a4c11447.js"
   ]
 }
