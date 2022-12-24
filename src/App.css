@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+/* Using variables to allow user interaction to change the values through Javascript */
+
+:root {
+  --skew-amount: 0.2deg;
+  --skew-back-amount: -0.2deg;
+
+  --rotate-rain-amount: 0deg;
+  --rain-opacity: None;
+
+  --fall-speed: 0.5s;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Calling animations for all the plants with different times for swaying */
+
+#tree {
+  animation: plantanimation 3s infinite;
+  position: absolute;
+  top: -3%;
+  left: 7%;
+  width: 30vw;
+  z-index: 4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Amimation that will sway the top of plants back and forth */
+
+@keyframes plantanimation {
+  0% {
+    transform-origin: bottom;
+    transform: skew(var(--skew-back-amount));
+  }
+  50% {
+    transform-origin: bottom;
+    transform: skew(var(--skew-amount));
+  }
+  100% {
+    transform-origin: bottom;
+    transform: skew(var(--skew-back-amount));
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+#precip {animation: drop var(--fall-speed) linear infinite;}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes drop {
+  0% {
+    opacity: 0.4;
+    transform: translateY(0vh);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(90vh);
   }
 }
+
+#precip {
+  opacity: 0;
+  
+  left: 0;
+  rotate: var(--rotate-rain-amount);
+}
+
+#screen {
+  background-image: linear-gradient(white, cyan);
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+#scene {
+  position: relative;
+  height: 100vh;
+  width: 80vw;
+  overflow: hidden;
+}
+
+#sky {
+  position: absolute;
+  z-index: 1;
+  width: 85vw;
+}
+
+#hill {
+  position: absolute;
+  z-index: 2;
+  width: 85vw;
+  transform: translateY(-8vh);
+}
+
+.precipitation {
+  position: absolute;
+  display: var(--rain-opacity);
+  z-index: 100;
+  width: 120%;
+}
+
+#inputs {
+  padding-left: 20%;
+  text-align: left;
+
+  height: 96vh;
+
+  list-style-type: none;
+}
+
+/* Making toggle for precipitation */
+#togglePrecip {
+  display: inline-block;
+  border-radius: 30%;
+}
+
+
