@@ -1,20 +1,24 @@
 /* Using variables to allow user interaction to change the values through Javascript */
 
 :root {
+
+  /* Variables for swaying tree */ 
   --skew-amount: 0.2deg;
   --skew-back-amount: -0.2deg;
 
+  /* Variables for animating rain and rotating it when wind is applied */
   --rotate-rain-amount: 0deg;
   --rain-opacity: None;
 
+  /* Adjustable fall speed for snow falling slower */
   --fall-speed: 0.5s;
 
+  /* Brightness to adjust day and night options */
   --brightness: 100%;
 
 }
 
 /* Calling animations for all the plants with different times for swaying */
-
 #tree {
   animation: plantanimation 3s infinite;
   position: absolute;
@@ -24,8 +28,7 @@
   z-index: 4;
 }
 
-/* Amimation that will sway the top of plants back and forth */
-
+/* Animation that will sway the top of plants back and forth */
 @keyframes plantanimation {
   0% {
     transform-origin: bottom;
@@ -41,6 +44,7 @@
   }
 }
 
+/* Animation will translate precipitation (snow/rain) down with adjustable fall speeds */
 #precip {animation: drop var(--fall-speed) linear infinite;}
 
 @keyframes drop {
@@ -54,6 +58,8 @@
   }
 }
 
+/* Precipitation set to opacity 0 so that non-moving sprites are not seen */
+/* Can be hidden as well with --rain-opacity and rotations are made using a variable as well */
 #precip {
   opacity: 0;
   display: var(--rain-opacity);
@@ -61,6 +67,8 @@
   rotate: var(--rotate-rain-amount);
 }
 
+/* Background colour is set and grid is made to seperate the scenery and the controls */
+/* Brightness applied to the entire screen when day or night is selected */
 #screen {
   background-image: linear-gradient(white, cyan);
   display: grid;
@@ -69,6 +77,8 @@
   filter: brightness(var(--brightness));
 }
 
+/* Scenery is positioned with height and width. */
+/* Overflow hidden to stop precipitation from extending the scene */
 #scene {
   position: relative;
   height: 100vh;
@@ -76,12 +86,16 @@
   overflow: hidden;
 }
 
+/* Sky and other scenery elements set to absolute position to allow overlap */
+
+/* Sky z-index 1 (back) and same width as the scene */
 #sky {
   position: absolute;
   z-index: 1;
   width: 85vw;
 }
 
+/* Hill in front of sky (z-index 2) and shifted up a bit */
 #hill {
   position: absolute;
   z-index: 2;
@@ -89,12 +103,15 @@
   transform: translateY(-8vh);
 }
 
+/* Precipitation container set in front of everything and with a wider width to fill screen when rotated */ 
 .precipitation {
   position: absolute;
   z-index: 100;
   width: 120%;
 }
 
+/* Inputs aligned left with a set height */
+/* No bullet points */
 #inputs {
   padding-left: 20%;
   text-align: left;
@@ -102,12 +119,6 @@
   height: 96vh;
 
   list-style-type: none;
-}
-
-/* Making toggle for precipitation */
-#togglePrecip {
-  display: inline-block;
-  border-radius: 30%;
 }
 
 
